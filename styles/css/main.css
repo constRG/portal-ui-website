@@ -320,7 +320,7 @@ a {
 }
 
 #header {
-  background-image: url("/assets/images/header/header-bg.png");
+  background-image: url("/portal-ui/assets/images/header/header-bg.png");
   background-position: center;
   background-size: cover;
   height: 100vh;
