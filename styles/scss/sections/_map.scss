@@ -1,0 +1,42 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+#map {
+    margin-top: 30px;
+    position: relative;
+
+    .map-img {
+        width: 100%;
+    }
+
+    .contacts {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+
+        .contact-item {
+            background-color: $white;
+            padding: 10px;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: #1fa9e0;
+                color: $white;
+            }
+        }
+    }
+}
+
+@include mobile {
+    #map {
+        .contacts {
+            bottom: 15px;
+        }
+    }
+}

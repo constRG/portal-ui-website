@@ -1,0 +1,104 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+#top-header {
+    background-color: $light-gray;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        padding: 15px 0;
+
+        .top-header-container-1 {
+            #top-header-container-1-btn {
+                background-color: $white;
+                padding: 8px 15px;
+                font-weight: map-get($font-weight, "bold");
+                font-size: 10px;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                border: none;
+                cursor: pointer;
+
+                .top-header-container-1-link {
+
+                    i {
+                        margin-right: 8px;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .top-header-container-2 {
+            .top-header-container-2-link {
+                margin-right: 20px;
+
+                img {
+                    max-width: 18px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    #top-header {
+        .container {
+            width: 70%;
+        }
+    }
+}
+
+@include laptop {
+    #top-header {
+        .container {
+            width: 80%;
+        }
+    }
+}
+
+@include tablet {
+    #top-header {
+        .container {
+            width: 90%;
+            display: grid;
+            justify-content: center;
+
+            .top-header-container-2 {
+                margin-top: 15px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include mobile {
+    #top-header {
+        .container {
+            width: 90%;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+
+            .top-header-container-2 {
+                margin-top: 15px;
+                text-align: center;
+            }
+        }
+    }
+}

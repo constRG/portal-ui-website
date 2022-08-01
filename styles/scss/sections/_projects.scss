@@ -1,0 +1,170 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+#projects {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    background-color: #efefef;
+
+    .container {
+
+        .projects-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .projects-title-img {
+                width: 70px;
+                margin-right: 20px;
+            }
+
+            .projects-title-text {
+                text-align: left;
+
+                .our-projects-title {
+                    font-size: 25px;
+                }
+
+                .our-projects-p {
+                    font-size: 15px;
+                    width: 300px;
+                }
+            }
+        }
+
+        .projects-categories {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                padding: 10px 15px;
+                border: 2px solid #bbbbbb;
+                border-radius: 5px;
+                color: #bbbbbb;
+                margin-right: 10px;
+                font-size: 15px;
+                font-weight: map-get($font-weight, "bold");
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    background-color: $white;
+                    color: $black;
+                    border: none;
+                }
+            }
+
+        }
+
+        .projects-list {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: center;
+            gap: 10px;
+
+
+            .project-item {
+                background-color: $white;
+                padding: 10px;
+                text-align: center;
+
+                .project-item-img {
+                    width: 100%;
+                    height: 150px;
+                }
+
+                .action-icon-btn {
+                    margin: 10px;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+
+                    a {
+                        color: #bbbbbb;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    #projects {
+        .container {
+            width: 70%;
+        }
+    }
+}
+
+@include laptop {
+    #projects {
+        .container {
+            width: 80%;
+        }
+    }
+}
+
+@include tablet {
+    #projects {
+        .container {
+            width: 90%;
+
+            .projects-title {
+                flex-direction: column;
+
+                .projects-title-text {
+                    text-align: center;
+                }
+            }
+
+            .projects-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@include mobile {
+    #projects {
+        .container {
+            width: 90%;
+
+            .projects-title {
+                flex-direction: column;
+
+                .projects-title-text {
+                    text-align: center;
+
+                    .our-projects-p {
+                        width: unset;
+                    }
+                }
+            }
+
+            .projects-categories {
+                flex-wrap: wrap;
+
+                a {
+                    font-size: 10px;
+                    padding: 8px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .projects-list {
+                grid-template-columns: 1fr;
+
+                .project-item {
+                    .project-item-img {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}

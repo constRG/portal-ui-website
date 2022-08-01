@@ -1,0 +1,63 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+#middle-header {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+
+        .logo {
+            font-weight: map-get($font-weight, "bold");
+            color: $light-blue;
+        }
+
+        .contact-links {
+            .contact-link {
+                color: $light-black;
+                margin-right: 30px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    color: $light-blue;
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    #middle-header {
+        .container {
+            width: 70%;
+        }
+    }
+}
+
+@include laptop {
+    #middle-header {
+        .container {
+            width: 80%;
+        }
+    }
+}
+
+@include tablet {
+    #middle-header {
+        .container {
+            width: 90%;
+        }
+    }
+}
+
+@include mobile {
+    #middle-header {
+        .container {
+            width: 90%;
+        }
+    }
+}

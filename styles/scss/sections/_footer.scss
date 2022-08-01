@@ -1,0 +1,170 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+footer {
+    background-color: $black;
+    padding-top: 60px;
+    padding-bottom: 50px;
+
+    .container {
+        .f-container-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .f-socmed {
+                display: flex;
+                gap: 20px;
+            }
+
+            .f-enter-email {
+                background-color: #393b3c;
+                padding: 10px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+
+                .fa-newspaper {
+                    margin-right: 10px;
+                }
+
+                .email {
+                    background-color: transparent;
+                    border: none;
+                    color: $light-black;
+                    font-size: 13px;
+                    padding: 10px;
+                    width: 250px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                #join-btn {
+                    background-color: #494c4d;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 10px;
+                    color: $light-black;
+                    font-weight: map-get($font-weight, "bold");
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .f-container-2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+
+            .copy {
+                font-size: 11px;
+                text-align: center;
+            }
+
+            .quick-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+
+                .quick-link-item {
+                    font-size: 11px;
+                    color: $light-black;
+                }
+            }
+        }
+
+        .developer {
+            text-align: center;
+            font-size: 11px;
+            margin-top: 40px;
+            font-weight: map-get($font-weight, "bold");
+        }
+    }
+}
+
+@include desktop {
+    .container {
+        width: 70%;
+    }
+}
+
+@include laptop {
+    .container {
+        width: 80%;
+    }
+}
+
+@include tablet {
+    .container {
+        width: 90%;
+
+        .f-container-1 {
+            flex-direction: column;
+
+            .f-enter-email {
+                margin-top: 30px;
+
+                .email {
+                    width: unset;
+                }
+            }
+        }
+
+        .f-container-2 {
+            flex-direction: column;
+
+            .quick-links {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .container {
+        width: 90%;
+
+        .f-container-1 {
+            flex-direction: column;
+
+            .f-enter-email {
+                margin-top: 30px;
+                width: 100%;
+                flex-direction: column;
+
+                .fa-newspaper {
+                    display: none;
+                }
+
+                .email {
+                    width: unset;
+                    margin-right: 0;
+                    text-align: center;
+                }
+
+                #join-btn {
+                    width: 100%;
+                    margin-top: 10px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .f-container-2 {
+            flex-direction: column;
+
+            .quick-links {
+                margin-top: 30px;
+            }
+        }
+    }
+}

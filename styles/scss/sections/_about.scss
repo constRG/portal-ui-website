@@ -1,0 +1,117 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+#about {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        padding-top: 60px;
+        padding-bottom: 50px;
+
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            margin-right: 50px;
+
+            .about-img {
+                width: 70px;
+                margin-right: 20px;
+            }
+
+            .about-text {
+                .about-title {
+                    font-size: 18px;
+                }
+
+                .about-p {
+                    margin-top: 15px;
+                    font-size: 14px;
+                    text-align: justify;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        .why-content {
+            display: flex;
+            align-items: flex-start;
+
+            .why-img {
+                width: 70px;
+                margin-right: 20px;
+            }
+
+            .why-text {
+                .why-title {
+                    font-size: 18px;
+                }
+
+                .why-p {
+                    margin-top: 15px;
+                    font-size: 14px;
+                    text-align: justify;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    #about {
+        .container {
+            width: 70%;
+        }
+    }
+}
+
+@include laptop {
+    #about {
+        .container {
+            width: 80%;
+        }
+    }
+}
+
+@include tablet {
+    #about {
+        .container {
+            width: 90%;
+            grid-template-columns: 1fr;
+
+            .about-content {
+                margin-right: 0;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    #about {
+        .container {
+            width: 90%;
+            grid-template-columns: 1fr;
+
+            .about-content {
+                display: grid;
+                margin-right: 0;
+                margin-bottom: 50px;
+
+                .about-img {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .why-content {
+                display: grid;
+
+                .why-img {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

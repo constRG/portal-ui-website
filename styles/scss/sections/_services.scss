@@ -1,0 +1,120 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+#services {
+    padding-top: 60px;
+    padding-bottom: 50px;
+
+    .container {
+        .services-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .services-title-img {
+                width: 70px;
+                margin-right: 20px;
+            }
+
+            .services-title-text {
+                text-align: left;
+
+                .what-we-do-title {
+                    font-size: 25px;
+                }
+
+                .what-we-do-p {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            margin-top: 50px;
+            column-gap: 20px;
+
+            .services-item {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 50px;
+
+                .services-item-img {
+                    width: 40px;
+                    margin-right: 20px;
+                }
+
+                .services-item-title {
+                    font-size: 18px;
+                }
+
+                .services-item-p {
+                    font-size: 14px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    #services {
+        .container {
+            width: 70%;
+        }
+    }
+}
+
+@include laptop {
+    #services {
+        .container {
+            width: 80%;
+        }
+    }
+}
+
+@include tablet {
+    #services {
+        .container {
+            width: 90%;
+
+            .services-title {
+                flex-direction: column;
+
+                .services-title-text {
+                    text-align: center;
+                }
+            }
+
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+@include mobile {
+    #services {
+        .container {
+            width: 90%;
+
+            .services-title {
+                flex-direction: column;
+
+                .services-title-text {
+                    text-align: center;
+                }
+            }
+
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

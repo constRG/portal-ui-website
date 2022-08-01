@@ -1,0 +1,91 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+#header {
+    background-image: url("/assets/images/header/header-bg.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+    .container {
+        .header-text {
+            text-align: center;
+            color: $white;
+            padding-top: 150px;
+
+            .header-title {
+                font-size: 35px;
+            }
+
+            .header-sub-title {
+                font-size: 25px;
+                font-weight: map-get($font-weight, "light");
+                margin-left: 140px;
+            }
+        }
+
+        .slider-img {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 100px;
+
+
+            .slider-item {
+                img {
+                    width: 100%;
+                    max-width: 250px;
+                }
+            }
+
+            #slider-next-btn {
+                padding: 40px 20px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@include tablet {
+    #header {
+        .container {
+            width: 90%;
+
+            .header-text {
+                .header-title {
+                    font-size: 30px;
+                }
+
+                .header-sub-title {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    #header {
+        .container {
+            width: 90%;
+
+            .header-text {
+                .header-title {
+                    font-size: 30px;
+                }
+
+                .header-sub-title {
+                    margin-left: 50px;
+                    font-size: 20px;
+                }
+            }
+
+            .slider-img {
+                margin-top: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,223 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use '../base/typography' as *;
+
+#navigation {
+    background-color: $white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        position: relative;
+
+        #nav-menu-btn {
+            cursor: pointer;
+            background: none;
+            border: none;
+            display: none;
+
+            .nav-menu-btn-line {
+                width: 30px;
+                height: 3px;
+                background-color: $light-blue;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        .nav-menu {
+            display: flex;
+
+            #close-nav-menu-btn {
+                display: none;
+            }
+
+            .nav-menu-item {
+                font-size: 13px;
+                font-weight: map-get($font-weight, "bold");
+                margin-right: 15px;
+
+                .nav-menu-link {
+                    color: $light-black;
+
+                    &:hover {
+                        color: $light-blue;
+                    }
+                }
+            }
+        }
+
+        .search-words {
+            display: flex;
+            align-items: center;
+
+            .search-btn {
+                color: $light-black;
+                margin-right: 5px;
+            }
+
+            #input-search {
+                border: none;
+                font-size: 13px;
+                padding: 5px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+
+@include desktop {
+    #navigation {
+        .container {
+            width: 70%;
+        }
+    }
+}
+
+@include laptop {
+    #navigation {
+        .container {
+            width: 80%;
+        }
+    }
+}
+
+@include tablet {
+    #navigation {
+        .container {
+            width: 90%;
+
+            #nav-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: block;
+                position: fixed;
+                background-color: $white;
+                width: 50%;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                text-align: left;
+                padding-top: 80px;
+                padding-left: 30px;
+                box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1);
+                transform: translateX(-100%);
+                transition: all 0.3s ease-in-out;
+
+                #close-nav-menu-btn {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 30px;
+                    right: 40px;
+                    background: none;
+                    border: none;
+                    display: block;
+
+                    .close-nav-menu-btn-line {
+                        width: 30px;
+                        height: 3px;
+                        background-color: $light-black;
+                        display: block;
+                        margin-bottom: 5px;
+                        position: absolute;
+                        top: 0;
+
+                        &:first-child {
+                            transform: rotate(45deg);
+                        }
+
+                        &:last-child {
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+
+                .nav-menu-item {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .nav-menu.nav-menu-active {
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+@include mobile {
+    #navigation {
+        .container {
+            width: 90%;
+
+            #nav-menu-btn {
+                display: block;
+                margin-right: 15px;
+            }
+
+            .nav-menu {
+                display: block;
+                position: fixed;
+                background-color: $white;
+                width: 50%;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                text-align: left;
+                padding-top: 80px;
+                padding-left: 30px;
+                box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1);
+                transform: translateX(-100%);
+                transition: all 0.3s ease-in-out;
+
+                #close-nav-menu-btn {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 30px;
+                    right: 40px;
+                    background: none;
+                    border: none;
+                    display: block;
+
+                    .close-nav-menu-btn-line {
+                        width: 30px;
+                        height: 3px;
+                        background-color: $light-black;
+                        display: block;
+                        margin-bottom: 5px;
+                        position: absolute;
+                        top: 0;
+
+                        &:first-child {
+                            transform: rotate(45deg);
+                        }
+
+                        &:last-child {
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+
+                .nav-menu-item {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .nav-menu.nav-menu-active {
+                transform: translateX(0);
+            }
+        }
+    }
+}
